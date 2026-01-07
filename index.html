@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mini E-commerce jQuery</title>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- BootStrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-white">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Lojinha</a>
+
+        <div class="d-flex align-items-center ms-auto gap-2">
+          <form class="d-flex" role="search">
+            <input
+              id="pesquisar"
+              class="form-control me-2"
+              type="search"
+              placeholder="Pesquisar"
+            />
+            <button id="pesquisarB" class="btn btn-outline-info" type="submit">
+              Pesquisar
+            </button>
+          </form>
+
+          <a
+            href="carrinho.html"
+            id="carrinho"
+            type="button"
+            class="btn btn-success"
+            >Carrinho</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- FILTRO -->
+    <ul class="nav justify-content-center gap-3 p-4">
+      <!-- PREÇOS -->
+      <li class="nav-item">
+        <select
+          id="selectPrecos"
+          class="form-select"
+          aria-label="Default select example"
+        >
+          <option value="todos">Todos os preços</option>
+          <option value="0-100">Até R$100</option>
+          <option value="100-300">R$100 - R$300</option>
+          <option value="300+">Acima de R$300</option>
+        </select>
+      </li>
+      <!-- CATEGORIAS -->
+      <li class="nav-item">
+        <select
+          id="selectCategorias"
+          class="form-select"
+          aria-label="Default select example"
+        >
+          <option value="todos">Todas categorias</option>
+          <option value="minimalista">Minimalista</option>
+          <option value="geek">Geek</option>
+          <option value="frases">Frases</option>
+          <option value="foto">Fotos</option>
+          <option value="datas">Datas</option>
+          <option value="corporativo">Corporativo</option>
+        </select>
+      </li>
+    </ul>
+
+    <!-- PRODUTOS -->
+    <main class="container">
+      <section id="lista-produtos" class="row gap-2 justify-content-center">
+        <!-- PRODUTOS SERÃO INSERIDOS DINÂMICAMENTE -->
+      </section>
+    </main>
+
+    <!-- MODAL -->
+    <div
+      style="
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 0;
+        display: none;
+      "
+      class="escuro"
+    ></div>
+
+    <div class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 id="modalNome" class="modal-title">
+              <!-- CARREGADO DINÂMICAMENTE -->
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img id="modalImagem" style="height: 300px" class="w-100" />
+            <!-- CARREGADO DINÂMICAMENTE -->
+            <p id="modalDescricao" class="fs-5">
+              <!-- CARREGADO DINÂMICAMENTE -->
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALERT DE COMPRA -->
+    <div
+      style="display: none"
+      class="alert alert-warning w-25 fixed-bottom ms-auto fade show p-2 m-3 text-center"
+      role="alert"
+    >
+      <strong>Compra Realizada com Sucesso</strong>
+    </div>
+
+    <!-- ALERT DE CARRINHO -->
+    <div
+      style="display: none"
+      class="alert alert-success w-25 fixed-bottom fade show p-2 m-3 text-center"
+      role="alert"
+    >
+      <strong>Produto Adicionado ao Carrinho</strong>
+    </div>
+
+    <script src="js/produtos.js" async defer></script>
+    <script src="js/filtros.js" async defer></script>
+    <script src="js/carrinho.js" async defer></script>
+  </body>
+</html>

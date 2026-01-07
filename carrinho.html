@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mini E-commerce (Carrinho) jQuery</title>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- BootStrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-white">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Lojinha</a>
+
+        <div class="d-flex align-items-center ms-auto gap-2">
+          <form class="d-flex" role="search">
+            <input
+              id="pesquisar"
+              class="form-control me-2"
+              type="search"
+              placeholder="Pesquisar"
+            />
+            <button id="pesquisarB" class="btn btn-outline-info" type="submit">
+              Pesquisar
+            </button>
+          </form>
+
+          <button id="carrinho" type="button" class="btn btn-success">
+            Carrinho
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CARRINHO -->
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-4 mx-auto">
+          <div class="card shadow-sm">
+            <!-- HEADER CARRINHO -->
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <span class="fw-bold">Seu carrinho</span>
+              <span id="myBadge" class="badge bg-primary">0</span>
+            </div>
+
+            <ul
+              style="max-height: 200px"
+              class="lista-carrinho list-group list-unstyled list-group-flush overflow-y-auto"
+            >
+              <!-- SERÃO CARREGADOS DINÂMICAMENTE-->
+            </ul>
+
+            <!-- PREÇO TOTAL -->
+            <div class="card-body">
+              <div class="d-flex justify-content-between fw-bold mb-3">
+                <span>Total:</span>
+                <span id="total">R$ 0</span>
+              </div>
+
+              <!-- FINALIZAR COMPRA -->
+              <div class="d-grid gap-2">
+                <a href="index.html" class="btn btn-outline-secondary"
+                  >Continuar comprando</a
+                >
+                <button onclick="alert('Compra Finalizada com Sucesso!')" class="btn btn-outline-warning">Finalizar compra</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/carrinho.js" async defer></script>
+  </body>
+</html>
