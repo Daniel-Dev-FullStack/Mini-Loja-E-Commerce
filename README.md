@@ -44,7 +44,7 @@
 
 ## 👁️ Como Visualizar
 
-Acesse a página: 
+Acesse a página: https://daniel-dev-fullstack.github.io/Mini-Loja-E-Commerce/index.html
 
 
 
